@@ -64,6 +64,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | New User Groups
+    |--------------------------------------------------------------------------
+    |
+    | When registering new users through the user:register_form tag, these
+    | groups will automatically be applied to your newly created users.
+    |
+    */
+
+    'new_user_groups' => [
+        //
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Password Brokers
     |--------------------------------------------------------------------------
     |
@@ -74,20 +88,26 @@ return [
     */
 
     'passwords' => [
-        'resets' => 'resets',
-        'activations' => 'activations',
+        'resets' => config('auth.defaults.passwords'),
+        'activations' => config('auth.defaults.passwords'),
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | DB Connection
+    | Database
     |--------------------------------------------------------------------------
     |
-    | Default database connection.
+    | Here you may configure the database connection and its table names.
     |
     */
 
     'database' => config('database.default'),
+
+    'tables' => [
+        'users' => 'users',
+        'role_user' => 'role_user',
+        'group_user' => 'group_user',
+    ],
 
     /*
     |--------------------------------------------------------------------------

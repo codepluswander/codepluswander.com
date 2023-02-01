@@ -1,40 +1,39 @@
-<p align="center"><img src="https://statamic.com/assets/branding/Statamic-Logo+Wordmark-Rad.svg" width="400" alt="Statamic Logo" /></p>
+<!-- statamic:hide -->
+# Stumblr
+> Share photos, videos, quotes, links, and more easily with the world. It's like your very own personal Tumblr.
+<!-- /statamic:hide -->
 
-## About Statamic 3
+## Features
 
-Statamic 3 is the flat-first, Laravel + Git powered CMS designed for building beautiful, easy to manage websites.
+Stumblr is your very own personal, customizable Tumblr. Create beautifully simple posts using one of 6 blueprints: Audio, Link, Photo, Quote, Text, and Video. Organize them by tags and just keep creating.
 
-> **Note:** This repository contains the code for the Statamic application. To contribute to the core package, visit the [Statamic core package repository][cms-repo].
+### Social Media Links
 
+Add links to your most important social networks in your Global variables area and let the kit take care of adding the icons to your nav for you.
 
-## Learning Statamic
+### RSS Feed and Sitemap
 
-Statamic 3 has extensive [documentation][docs]. We dedicate a significant amount of time and energy every day to improving them, so if something is unclear, feel free to open issues for anything you find confusing or incomplete. We are happy to consider anything you feel will make the docs and CMS better.
+Your RSS Feed is available at `/feed.xml` and sitemap at `/sitemap.xml`.
 
-## Support
+### Frontend Build Details
 
-We provide official developer support on [Statamic 3 Pro](https://statamic.com/pricing) projects. Community-driven support is available on the [forum](https://statamic.com/forum) and in [Discord][discord].
+- Built with [TailwindCSS](https://tailwindcss.com)
+- Configurable social media links
+- Full [static site](https://github.com/statamic/ssg) support
+- Mobile/Responsive friendly
 
+## Customizing
 
-## Contributing
+### Frontend
 
-Thank you for considering contributing to Statamic! We simply ask that you review the [contribution guide][contribution] before you open issues or send pull requests.
+Modify the templates and views however you'd like. Just run `npm install` to install the Laravel Mix/webpack tooling and then one of the following commands to compile your css:
 
+- `npm run dev` to compile dev assets
+- `npm run watch` to watch and compile dev assets on the fly
+- `npm run prod` to compile production-ready assets
 
-## Code of Conduct
+### Adding new "Post Types"
 
-In order to ensure that the Statamic community is welcoming to all and generally a rad place to belong, please review and abide by the [Code of Conduct](https://github.com/statamic/cms/wiki/Code-of-Conduct).
+You can create new types of posts by adding new [Blueprints](https://statamic.dev/blueprints) to the Posts collection.
 
-
-## Important Links
-
-- [Statamic Main Site](https://statamic.com)
-- [Statamic 3 Documentation][docs]
-- [Statamic 3 Core Package Repo][cms-repo]
-- [Statamic 3 Migrator](https://github.com/statamic/migrator)
-- [Statamic Discord][discord]
-
-[docs]: https://statamic.dev/
-[discord]: https://statamic.com/discord
-[contribution]: https://github.com/statamic/cms/blob/master/CONTRIBUTING.md
-[cms-repo]: https://github.com/statamic/cms
+These blueprints need a matching template partial of the same name in `resources/views/post_types/` to render their output.
